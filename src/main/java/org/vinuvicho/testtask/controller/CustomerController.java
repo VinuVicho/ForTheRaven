@@ -1,11 +1,8 @@
 package org.vinuvicho.testtask.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.vinuvicho.testtask.dto.CustomerDTO;
-import org.vinuvicho.testtask.entity.Customer;
-import org.vinuvicho.testtask.mapper.CustomerToCustomerDTO;
 import org.vinuvicho.testtask.service.CustomerService;
 
 import java.util.List;
