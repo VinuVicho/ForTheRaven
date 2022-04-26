@@ -1,12 +1,10 @@
 package org.vinuvicho.testtask.entity;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -22,6 +20,8 @@ public class Customer {
     private String fullName;
     @NotNull
     private String email;
+    private LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime updated;
     private String phone;
     private Boolean isActive = true;
 

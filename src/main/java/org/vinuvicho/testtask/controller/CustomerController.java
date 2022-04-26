@@ -9,31 +9,35 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api")
+@RequestMapping("/api/customers")
 public class CustomerController {
     private CustomerService customerService;
 
-    @PostMapping("/customer")
+    @PostMapping()
     public CustomerDTO createCustomer(@RequestBody CustomerDTO customer) {
         return customerService.createCustomer(customer);
     }
 
-    @GetMapping("/customers")
+    @GetMapping()
     public List<CustomerDTO> getAllCustomers() {
         return customerService.getAllCustomers();
     }
 
-    @GetMapping("/customer/{id}")
+    @GetMapping("/{id}")
     public CustomerDTO getCustomer(@PathVariable("id") Long id) {
         return customerService.getCustomer(id);
     }
 
-    @PutMapping("/customer/{id}")
+    @PutMapping("/{id}")
     public CustomerDTO updateCustomer(@RequestBody CustomerDTO customer) {
         return customerService.updateCustomer(customer);
     }
+    @PatchMapping("/{id}")
+    public CustomerDTO updateCustomerField(@RequestBody CustomerDTO customer) {
+        return customerService.updateCustomerField(customer);
+    }
 
-    @DeleteMapping("/customer/{id}")
+    @DeleteMapping("/{id}")
     public void deleteCustomer(@PathVariable("id") Long id) {
         customerService.deleteCustomer(id);
     }
