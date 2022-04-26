@@ -1,7 +1,10 @@
 package org.vinuvicho.testtask.entity;
 
 import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -25,7 +28,8 @@ public class Customer {
     private String phone;
     private Boolean isActive = true;
 
-    public Customer() {}
+    public Customer() {
+    }
 
     public Customer(Long id, String fullName, String email, String phone) {
         this.id = id;

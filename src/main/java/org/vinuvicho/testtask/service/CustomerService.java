@@ -3,7 +3,6 @@ package org.vinuvicho.testtask.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.vinuvicho.testtask.dto.CustomerDTO;
-import org.vinuvicho.testtask.entity.Customer;
 import org.vinuvicho.testtask.exeption.InvalidInputException;
 import org.vinuvicho.testtask.exeption.NotFoundException;
 import org.vinuvicho.testtask.mapper.CustomerToCustomerDTO;
@@ -79,8 +78,8 @@ public class CustomerService {
             } else throw new InvalidInputException();
         }
         if (customerDTO.getPhone() != null && validatePhone(customerDTO.getPhone())) {
-                customerRepo.updateCustomerPhone(customerDTO.getPhone(), customerDTO.getId(), LocalDateTime.now());
-            } else throw new InvalidInputException();
+            customerRepo.updateCustomerPhone(customerDTO.getPhone(), customerDTO.getId(), LocalDateTime.now());
+        } else throw new InvalidInputException();
         return customerMapper.toDTO(customerRepo.getCustomerById(customerDTO.getId()).get());
     }
 }

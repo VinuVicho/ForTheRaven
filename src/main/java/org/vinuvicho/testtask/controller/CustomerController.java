@@ -32,6 +32,7 @@ public class CustomerController {
     public CustomerDTO updateCustomer(@RequestBody CustomerDTO customer) {
         return customerService.updateCustomer(customer);
     }
+
     @PatchMapping("/{id}")
     public CustomerDTO updateCustomerField(@RequestBody CustomerDTO customer) {
         return customerService.updateCustomerField(customer);
