@@ -31,7 +31,6 @@ public interface CustomerRepo extends JpaRepository<Customer, Long> {
     @Query(value = "update customer set full_name = ?1, phone = ?2, updated = ?4 where id = ?3", nativeQuery = true)
     void updateCustomer(String name, String phone, Long id, LocalDateTime time);
 
-
     Optional<Customer> getCustomerByIdAndIsActiveTrue(Long id);
 
     List<Customer> getAllByIsActiveTrue();
