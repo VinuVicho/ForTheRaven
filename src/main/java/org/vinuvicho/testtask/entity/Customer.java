@@ -15,9 +15,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString
 public class Customer {
-    @SequenceGenerator(name = "player_sequence", sequenceName = "player_sequence", allocationSize = 1)
+    @SequenceGenerator(name = "customer_sequence", sequenceName = "customer_sequence", allocationSize = 1)
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "player_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_sequence")
     private Long id;
     @NotNull
     private String fullName;
